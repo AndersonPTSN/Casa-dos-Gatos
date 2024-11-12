@@ -1,0 +1,236 @@
+[gd_scene load_steps=37 format=3 uid="uid://c2iqw58ratu2k"]
+
+[ext_resource type="PackedScene" uid="uid://ckvheh24ifa2k" path="res://Mundo/casa.tscn" id="1_5i58g"]
+[ext_resource type="PackedScene" uid="uid://wnlttblum3pt" path="res://Player/player.tscn" id="2_comt3"]
+[ext_resource type="Script" path="res://Fase_1/ItemList.gd" id="3_1ok64"]
+[ext_resource type="PackedScene" uid="uid://cdiiqx7lvk1t6" path="res://Objetos/aviso.tscn" id="4_00j40"]
+[ext_resource type="PackedScene" uid="uid://cvcu75p0hht4f" path="res://Fase_2/window.tscn" id="4_m31em"]
+[ext_resource type="PackedScene" uid="uid://cfwv4mtby8bl1" path="res://Objetos/interacao.tscn" id="5_5h0cf"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/interacao_agua_pote.gd" id="7_4dfxq"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/Pote.gd" id="7_moa6p"]
+[ext_resource type="PackedScene" uid="uid://b2ecm3sj5w0d8" path="res://Objetos/Objeto_modelo/Objeto_node.tscn" id="7_o1gk8"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/lixo.gd" id="8_1okb6"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/interacao_pote_chao.gd" id="8_ovlug"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/interacao_racao_pote.gd" id="8_vgnim"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Objeto_Classe_Script.gd" id="9_pgl67"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/interacao_arcondicionado.gd" id="10_k2ocy"]
+[ext_resource type="Texture2D" uid="uid://dppb1tiksmqkr" path="res://Mundo/individual_sprites/part-Slice 406.png" id="12_gxuy2"]
+[ext_resource type="Texture2D" uid="uid://bqgnp6vvbumhl" path="res://Mundo/individual_sprites/part-Slice 407.png" id="13_wlumk"]
+[ext_resource type="Texture2D" uid="uid://bc4lh7lgbuerw" path="res://Mundo/individual_sprites/part-Slice 408.png" id="14_jbwkx"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Itens/controle.gd" id="15_jhrie"]
+[ext_resource type="Texture2D" uid="uid://dxjvqn27f27mk" path="res://Mundo/individual_sprites/part-Slice 409.png" id="15_lqtwe"]
+[ext_resource type="Texture2D" uid="uid://oa5p3cxn0tw" path="res://Mundo/individual_sprites/part-Slice 410.png" id="16_hqbeg"]
+[ext_resource type="Texture2D" uid="uid://c5p8vsl0gqlcc" path="res://Mundo/individual_sprites/part-Slice 411.png" id="17_3tec1"]
+[ext_resource type="Texture2D" uid="uid://2q00p0rcqr1v" path="res://Mundo/individual_sprites/part-Slice 412.png" id="18_5hs28"]
+[ext_resource type="Texture2D" uid="uid://s54nnt1puxpx" path="res://Mundo/individual_sprites/part-Slice 413.png" id="19_7kysf"]
+[ext_resource type="Texture2D" uid="uid://d0phluwy8vall" path="res://Fase_2/check.png" id="22_lg81d"]
+[ext_resource type="AudioStream" uid="uid://cuw75gwl6c15t" path="res://Fase_2/fase_1.mp3" id="24_tsaey"]
+[ext_resource type="Script" path="res://Fase_1/Button.gd" id="25_6vclj"]
+[ext_resource type="Texture2D" uid="uid://5wmbupwey02" path="res://Fase_1/msg-dona.png" id="25_dx2jh"]
+[ext_resource type="Texture2D" uid="uid://bmudlejplxs60" path="res://Fase_2/warning.png" id="28_6mklt"]
+[ext_resource type="Script" path="res://Fase_1/Area2D.gd" id="29_iu6n3"]
+
+[sub_resource type="Resource" id="Resource_lb8yo"]
+script = ExtResource("9_pgl67")
+nome = "Lixo"
+descricao = "Apenas uma pilha de lixo"
+imagem = "res://Objetos/Objeto_modelo/Itens/lixo.png"
+
+[sub_resource type="Resource" id="Resource_mjr4a"]
+script = ExtResource("9_pgl67")
+nome = "Controle"
+descricao = "Controle do Ar-condicionado"
+imagem = "res://Objetos/Objeto_modelo/Itens/controle.png"
+
+[sub_resource type="Resource" id="Resource_b1kci"]
+script = ExtResource("9_pgl67")
+nome = "Pote"
+descricao = "Util para pegar ração e água"
+imagem = "res://Objetos/Objeto_modelo/Itens/pote.png"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_psrfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_gxuy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wlumk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jbwkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lqtwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hqbeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3tec1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5hs28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7kysf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sroow"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mqvdp"]
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeux"]
+size = Vector2(98.75, 92)
+
+[node name="Fase_1" type="Node2D"]
+position = Vector2(-512, -669)
+
+[node name="Casa" parent="." instance=ExtResource("1_5i58g")]
+position = Vector2(345.508, 273.905)
+
+[node name="interacao_lixeira" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(767, 1059)
+
+[node name="lixo" parent="." instance=ExtResource("7_o1gk8")]
+position = Vector2(1597, 1224)
+scale = Vector2(3, 3)
+script = ExtResource("8_1okb6")
+objeto = SubResource("Resource_lb8yo")
+
+[node name="lixo2" parent="." instance=ExtResource("7_o1gk8")]
+position = Vector2(1462, 818)
+scale = Vector2(3, 3)
+script = ExtResource("8_1okb6")
+objeto = SubResource("Resource_lb8yo")
+
+[node name="controle" parent="." instance=ExtResource("7_o1gk8")]
+texture_filter = 1
+position = Vector2(738, 686)
+scale = Vector2(3, 3)
+script = ExtResource("15_jhrie")
+objeto = SubResource("Resource_mjr4a")
+
+[node name="pote" parent="." instance=ExtResource("7_o1gk8")]
+texture_filter = 1
+position = Vector2(1044, 738)
+scale = Vector2(3, 3)
+script = ExtResource("7_moa6p")
+objeto = SubResource("Resource_b1kci")
+
+[node name="interacao_agua_pote" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(742, 932)
+script = ExtResource("7_4dfxq")
+
+[node name="interacao_racao_pote" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(540, 932)
+script = ExtResource("8_vgnim")
+
+[node name="interacao_pote_chao" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(1167, 1039)
+script = ExtResource("8_ovlug")
+
+[node name="interacao_arcondicionado" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(1205, 630)
+script = ExtResource("10_k2ocy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="interacao_arcondicionado"]
+texture_filter = 1
+position = Vector2(78, 105)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_psrfr")
+frame_progress = 0.900711
+speed_scale = 5.0
+
+[node name="Window" parent="." instance=ExtResource("4_m31em")]
+position = Vector2i(11957, 363)
+
+[node name="player" parent="." instance=ExtResource("2_comt3")]
+position = Vector2(1081, 997)
+
+[node name="Msg-dona" type="Sprite2D" parent="player"]
+position = Vector2(608, -888)
+texture = ExtResource("25_dx2jh")
+
+[node name="Label" type="Label" parent="player"]
+offset_left = -521.0
+offset_top = -291.0
+offset_right = -319.0
+offset_bottom = -268.0
+theme_override_colors/font_color = Color(0.962821, 0.934601, 0.845124, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sroow")
+text = "INVENTÁRIO"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="ItemList" type="ItemList" parent="player"]
+offset_left = -521.0
+offset_top = -268.0
+offset_right = -320.0
+offset_bottom = -50.0
+script = ExtResource("3_1ok64")
+
+[node name="aviso" parent="player" instance=ExtResource("4_00j40")]
+position = Vector2(48, -416)
+
+[node name="Button" type="Button" parent="player"]
+offset_left = 393.0
+offset_top = -273.0
+offset_right = 534.0
+offset_bottom = -215.0
+text = "Aviso da Dona"
+script = ExtResource("25_6vclj")
+
+[node name="Check1" type="Sprite2D" parent="player"]
+position = Vector2(97, -711)
+texture = ExtResource("22_lg81d")
+
+[node name="Check2" type="Sprite2D" parent="player"]
+position = Vector2(96, -687)
+texture = ExtResource("22_lg81d")
+
+[node name="Check3" type="Sprite2D" parent="player"]
+position = Vector2(98, -654)
+texture = ExtResource("22_lg81d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_tsaey")
+volume_db = -20.944
+autoplay = true
+
+[node name="Warning" type="Sprite2D" parent="."]
+position = Vector2(1444, -182)
+texture = ExtResource("28_6mklt")
+
+[node name="Label" type="Label" parent="Warning"]
+offset_left = -34.0
+offset_top = 33.0
+offset_right = 45.0
+offset_bottom = 73.0
+text = "  Miauu!"
+label_settings = SubResource("LabelSettings_mqvdp")
+
+[node name="Area2D" type="Area2D" parent="Warning"]
+script = ExtResource("29_iu6n3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warning/Area2D"]
+position = Vector2(-1, 27.2547)
+shape = SubResource("RectangleShape2D_kkeux")
+
+[connection signal="body_entered" from="lixo" to="lixo" method="_on_body_entered"]
+[connection signal="body_entered" from="lixo2" to="lixo2" method="_on_body_entered"]
+[connection signal="body_entered" from="controle" to="controle" method="_on_body_entered"]
+[connection signal="body_entered" from="pote" to="pote" method="_on_body_entered"]
+[connection signal="item_clicked" from="player/ItemList" to="player/ItemList" method="_on_item_clicked"]
+[connection signal="pressed" from="player/Button" to="player/Button" method="_on_pressed"]
+[connection signal="body_entered" from="Warning/Area2D" to="Warning/Area2D" method="_on_body_entered"]
+
+[editable path="Casa"]

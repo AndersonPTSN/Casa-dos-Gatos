@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ywy0kqyjkid"]
+
+[ext_resource type="Texture2D" uid="uid://cuxwdmb2jgt0j" path="res://Fase_2_Arteiro/Arteiro.png" id="1_iq07g"]
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_2_Arteiro/MSG.png" id="2_gjvvh"]
+[ext_resource type="Texture2D" uid="uid://dfu36k8q7hksg" path="res://Fase_2_Arteiro/Termometros/termometro0.png" id="3_mjh2q"]
+[ext_resource type="Texture2D" uid="uid://bk3pv44mx04t4" path="res://Fase_2_Arteiro/Arteiro_marca.png" id="4_wxl7x"]
+[ext_resource type="Script" path="res://Fase_2_Arteiro/Button.gd" id="5_0jvb5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftye8"]
+font_size = 22
+
+[node name="Dengozo" type="Node2D"]
+
+[node name="Dengozo" type="Sprite2D" parent="."]
+position = Vector2(576, 230)
+scale = Vector2(1.79956, 1.79828)
+texture = ExtResource("1_iq07g")
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(577, 557)
+scale = Vector2(2.29159, 1.29054)
+texture = ExtResource("2_gjvvh")
+
+[node name="Termometro" type="Sprite2D" parent="."]
+position = Vector2(1032, 242)
+texture = ExtResource("3_mjh2q")
+
+[node name="DengozoMarca" type="Sprite2D" parent="."]
+position = Vector2(1070, 166)
+texture = ExtResource("4_wxl7x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 479.0
+offset_right = 899.0
+offset_bottom = 526.0
+text = "Ganhe os desafios para consequir conquistar o Arteiro"
+label_settings = SubResource("LabelSettings_ftye8")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 432.0
+offset_top = 542.0
+offset_right = 706.0
+offset_bottom = 597.0
+text = "OK"
+script = ExtResource("5_0jvb5")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

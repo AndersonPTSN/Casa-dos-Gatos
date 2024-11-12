@@ -1,0 +1,199 @@
+[gd_scene load_steps=34 format=3 uid="uid://c2iqw58ratu2k"]
+
+[ext_resource type="PackedScene" uid="uid://ckvheh24ifa2k" path="res://Mundo/casa.tscn" id="1_5i58g"]
+[ext_resource type="PackedScene" uid="uid://wnlttblum3pt" path="res://Player/player.tscn" id="2_comt3"]
+[ext_resource type="Script" path="res://Fase_2/dengozo-gato.gd" id="3_2qvei"]
+[ext_resource type="PackedScene" uid="uid://cdiiqx7lvk1t6" path="res://Objetos/aviso.tscn" id="4_00j40"]
+[ext_resource type="Script" path="res://Fase_2/senha.gd" id="4_451hh"]
+[ext_resource type="PackedScene" uid="uid://cvcu75p0hht4f" path="res://Fase_2/window.tscn" id="4_m31em"]
+[ext_resource type="PackedScene" uid="uid://cfwv4mtby8bl1" path="res://Objetos/interacao.tscn" id="5_5h0cf"]
+[ext_resource type="Texture2D" uid="uid://dhmh228ko5pom" path="res://Fase_2/nota.png" id="5_5q830"]
+[ext_resource type="Texture2D" uid="uid://c2b7i7f2dkupk" path="res://Fase_2/msg-dona-2.png" id="6_cbvmg"]
+[ext_resource type="Script" path="res://Fase_2/Button2.gd" id="7_cv36r"]
+[ext_resource type="Texture2D" uid="uid://be4brd4tuayuo" path="res://Fase_2/dengozo_gato.png" id="8_qhvom"]
+[ext_resource type="Script" path="res://Fase_2/window.gd" id="8_x5pkv"]
+[ext_resource type="Script" path="res://Player/player2.gd" id="10_2glql"]
+[ext_resource type="Texture2D" uid="uid://d0phluwy8vall" path="res://Fase_2/check.png" id="10_c1cqg"]
+[ext_resource type="Script" path="res://Fase_2/ItemList2.gd" id="12_lsl1h"]
+[ext_resource type="PackedScene" uid="uid://cnfu6qdfwisna" path="res://Fase_2/Cadeado_eletronico.tscn" id="16_6pse4"]
+[ext_resource type="Script" path="res://Fase_2/2.gd" id="17_cem4q"]
+[ext_resource type="PackedScene" uid="uid://b2ecm3sj5w0d8" path="res://Objetos/Objeto_modelo/Objeto_node.tscn" id="17_iq1rx"]
+[ext_resource type="Script" path="res://Fase_2/3.gd" id="18_byiif"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/CHAVE.gd" id="18_mhmcc"]
+[ext_resource type="Script" path="res://Objetos/Objeto_modelo/Objeto_Classe_Script.gd" id="19_3x3gl"]
+[ext_resource type="Script" path="res://Fase_2/Enter.gd" id="19_67r3l"]
+[ext_resource type="Script" path="res://Fase_2/Porta.gd" id="20_6jwgc"]
+[ext_resource type="Script" path="res://Fase_2/limpar.gd" id="20_8fg4a"]
+[ext_resource type="Script" path="res://Fase_2/x.gd" id="21_dgh47"]
+[ext_resource type="Script" path="res://Objetos/Porta2.gd" id="21_g1poh"]
+[ext_resource type="AudioStream" uid="uid://cuw75gwl6c15t" path="res://Fase_2/fase_1.mp3" id="24_tsaey"]
+[ext_resource type="Texture2D" uid="uid://bmudlejplxs60" path="res://Fase_2/warning.png" id="28_74rbd"]
+[ext_resource type="Script" path="res://Fase_2/Area2D.gd" id="29_2dkdl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sroow"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="Resource" id="Resource_g5vab"]
+script = ExtResource("19_3x3gl")
+nome = "chave"
+descricao = "Objeto pra abrir a porta"
+imagem = "res://Fase_2/chave.png"
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyxb1"]
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntgpi"]
+size = Vector2(98.75, 92)
+
+[node name="Fase_2" type="Node2D"]
+position = Vector2(-512, -669)
+
+[node name="Casa" parent="." instance=ExtResource("1_5i58g")]
+position = Vector2(345.508, 273.905)
+
+[node name="dengozo" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(1356, 572)
+scale = Vector2(1, 1.014)
+script = ExtResource("3_2qvei")
+
+[node name="DengozoGato" type="Sprite2D" parent="dengozo"]
+position = Vector2(81, 93.6884)
+scale = Vector2(0.236856, 0.25328)
+texture = ExtResource("8_qhvom")
+
+[node name="senha" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(555, 1006)
+scale = Vector2(1, 1.014)
+script = ExtResource("4_451hh")
+
+[node name="Nota" type="Sprite2D" parent="senha"]
+position = Vector2(81, 90.7298)
+scale = Vector2(1, 0.986193)
+texture = ExtResource("5_5q830")
+
+[node name="Window" parent="." instance=ExtResource("4_m31em")]
+position = Vector2i(961, 22222)
+script = ExtResource("8_x5pkv")
+
+[node name="player" parent="." instance=ExtResource("2_comt3")]
+position = Vector2(1081, 997)
+script = ExtResource("10_2glql")
+
+[node name="Msg-dona" type="Sprite2D" parent="player"]
+position = Vector2(571, -831)
+texture = ExtResource("6_cbvmg")
+
+[node name="Label" type="Label" parent="player"]
+offset_left = -521.0
+offset_top = -291.0
+offset_right = -319.0
+offset_bottom = -268.0
+theme_override_colors/font_color = Color(0.962821, 0.934601, 0.845124, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sroow")
+text = "INVENTÁRIO"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="ItemList" type="ItemList" parent="player"]
+offset_left = -521.0
+offset_top = -268.0
+offset_right = -320.0
+offset_bottom = -50.0
+script = ExtResource("12_lsl1h")
+
+[node name="Button2" type="Button" parent="player"]
+offset_left = 393.0
+offset_top = -273.0
+offset_right = 534.0
+offset_bottom = -215.0
+text = "Aviso da Dona"
+script = ExtResource("7_cv36r")
+
+[node name="aviso" parent="player" instance=ExtResource("4_00j40")]
+position = Vector2(48, -416)
+
+[node name="Check1" type="Sprite2D" parent="player"]
+visible = false
+position = Vector2(97, -711)
+texture = ExtResource("10_c1cqg")
+
+[node name="Check2" type="Sprite2D" parent="player"]
+visible = false
+position = Vector2(96, -687)
+texture = ExtResource("10_c1cqg")
+
+[node name="Check3" type="Sprite2D" parent="player"]
+visible = false
+position = Vector2(98, -654)
+texture = ExtResource("10_c1cqg")
+
+[node name="Cadeado_eletronico" parent="player" instance=ExtResource("16_6pse4")]
+visible = false
+
+[node name="2" parent="player/Cadeado_eletronico" index="1"]
+script = ExtResource("17_cem4q")
+
+[node name="3" parent="player/Cadeado_eletronico" index="2"]
+script = ExtResource("18_byiif")
+
+[node name="Enter" parent="player/Cadeado_eletronico" index="3"]
+script = ExtResource("19_67r3l")
+
+[node name="limpar" parent="player/Cadeado_eletronico" index="6"]
+script = ExtResource("20_8fg4a")
+
+[node name="x" parent="player/Cadeado_eletronico" index="7"]
+script = ExtResource("21_dgh47")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_tsaey")
+volume_db = -20.944
+autoplay = true
+
+[node name="chave" parent="." instance=ExtResource("17_iq1rx")]
+position = Vector2(1579, 1248)
+scale = Vector2(3, 3)
+script = ExtResource("18_mhmcc")
+objeto = SubResource("Resource_g5vab")
+
+[node name="Porta" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(1126, 634)
+script = ExtResource("20_6jwgc")
+
+[node name="Porta2" parent="." instance=ExtResource("5_5h0cf")]
+position = Vector2(1116, 234)
+script = ExtResource("21_g1poh")
+
+[node name="Warning" type="Sprite2D" parent="."]
+position = Vector2(1199, 147)
+texture = ExtResource("28_74rbd")
+
+[node name="Label" type="Label" parent="Warning"]
+offset_left = -34.0
+offset_top = 33.0
+offset_right = 45.0
+offset_bottom = 73.0
+text = "  Miauu!"
+label_settings = SubResource("LabelSettings_jyxb1")
+
+[node name="Area2D" type="Area2D" parent="Warning"]
+script = ExtResource("29_2dkdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warning/Area2D"]
+position = Vector2(-1, 27.2547)
+shape = SubResource("RectangleShape2D_ntgpi")
+
+[connection signal="item_clicked" from="player/ItemList" to="player/ItemList" method="_on_item_clicked"]
+[connection signal="pressed" from="player/Button2" to="player/Button2" method="_on_pressed"]
+[connection signal="pressed" from="player/Cadeado_eletronico/2" to="player/Cadeado_eletronico/2" method="_on_pressed"]
+[connection signal="pressed" from="player/Cadeado_eletronico/3" to="player/Cadeado_eletronico/3" method="_on_pressed"]
+[connection signal="pressed" from="player/Cadeado_eletronico/Enter" to="player/Cadeado_eletronico/Enter" method="_on_pressed"]
+[connection signal="pressed" from="player/Cadeado_eletronico/limpar" to="player/Cadeado_eletronico/limpar" method="_on_pressed"]
+[connection signal="pressed" from="player/Cadeado_eletronico/x" to="player/Cadeado_eletronico/x" method="_on_pressed"]
+[connection signal="body_entered" from="chave" to="chave" method="_on_body_entered"]
+[connection signal="body_entered" from="Warning/Area2D" to="Warning/Area2D" method="_on_body_entered"]
+
+[editable path="Casa"]
+[editable path="player/Cadeado_eletronico"]

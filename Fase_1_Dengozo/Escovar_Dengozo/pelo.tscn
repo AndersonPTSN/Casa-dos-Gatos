@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddw4tisb1mag"]
+
+[ext_resource type="Texture2D" uid="uid://d1xhkpged4joy" path="res://Fase_1_Dengozo/Escovar_Dengozo/pelo.png" id="1_qv6sf"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Escovar_Dengozo/Pelo.gd" id="2_rfsuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bwx4"]
+size = Vector2(125.431, 94.3365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdbgm"]
+size = Vector2(125.431, 94.3365)
+
+[node name="Pelo" type="CharacterBody2D"]
+position = Vector2(-1, 7)
+scale = Vector2(0.462406, 0.519417)
+script = ExtResource("2_rfsuh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9.53674e-07)
+shape = SubResource("RectangleShape2D_5bwx4")
+
+[node name="CharacterBody2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qv6sf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.14577e-06, 0.962618)
+shape = SubResource("RectangleShape2D_bdbgm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

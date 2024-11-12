@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=3 uid="uid://b0kn4hg8lh5fd"]
+
+[ext_resource type="Texture2D" uid="uid://d153lrmlm42a" path="res://Fase_1_Dengozo/Escovar_Dengozo/Sem título.png" id="1_5e5rt"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/musica.gd" id="1_ypuvi"]
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_1_Dengozo/MSG.png" id="2_qjx4d"]
+[ext_resource type="Texture2D" uid="uid://bpa6acpr1d5gx" path="res://Fase_1_Dengozo/Musica_Dengozo/medidor.png" id="3_imybj"]
+[ext_resource type="Texture2D" uid="uid://do71csebn6tya" path="res://Fase_1_Dengozo/Musica_Dengozo/ceta.png" id="4_80utj"]
+[ext_resource type="Texture2D" uid="uid://cpirwuxnafoil" path="res://Fase_1_Dengozo/Musica_Dengozo/esquerda.png" id="5_70ysw"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/Esquerda.gd" id="6_djnqx"]
+[ext_resource type="Texture2D" uid="uid://bpfmyq4l8ymnj" path="res://Fase_1_Dengozo/Musica_Dengozo/cima.png" id="6_ww7pq"]
+[ext_resource type="Texture2D" uid="uid://d4cs4tofxfhk6" path="res://Fase_1_Dengozo/Musica_Dengozo/baixo.png" id="7_70nqh"]
+[ext_resource type="Texture2D" uid="uid://cdva3jaquj6cq" path="res://Fase_1_Dengozo/Musica_Dengozo/direita.png" id="8_foqls"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/Cima.gd" id="8_ssnba"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/Direita.gd" id="9_fb8ae"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/Baixo.gd" id="10_fjog6"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Musica_Dengozo/chao.gd" id="14_34oa0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ih8f"]
+font_size = 22
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f38fh"]
+size = Vector2(32, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yr6w"]
+size = Vector2(65, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4e3c"]
+size = Vector2(65, 65.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgd15"]
+size = Vector2(65, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bht1y"]
+size = Vector2(315, 53.5)
+
+[node name="musica" type="Node2D"]
+script = ExtResource("1_ypuvi")
+
+[node name="SemTítulo" type="Sprite2D" parent="."]
+position = Vector2(576, 325.75)
+scale = Vector2(5.87879, 5.58403)
+texture = ExtResource("1_5e5rt")
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(577, 557)
+scale = Vector2(2.29159, 1.29054)
+texture = ExtResource("2_qjx4d")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 479.0
+offset_right = 899.0
+offset_bottom = 526.0
+text = "Toque as notas certas atravez das teclas direcionais"
+label_settings = SubResource("LabelSettings_0ih8f")
+horizontal_alignment = 1
+
+[node name="Medidor" type="Sprite2D" parent="."]
+position = Vector2(820, 334)
+texture = ExtResource("3_imybj")
+
+[node name="Ceta" type="Sprite2D" parent="."]
+position = Vector2(821, 396)
+rotation = -1.5708
+texture = ExtResource("4_80utj")
+offset = Vector2(0, -65)
+
+[node name="Esquerda" type="Area2D" parent="."]
+script = ExtResource("6_djnqx")
+
+[node name="Esquerda" type="Sprite2D" parent="Esquerda"]
+position = Vector2(97, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("5_70ysw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esquerda"]
+position = Vector2(97, 400.5)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_f38fh")
+
+[node name="Cima" type="Area2D" parent="."]
+script = ExtResource("8_ssnba")
+
+[node name="Cima" type="Sprite2D" parent="Cima"]
+position = Vector2(173, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ww7pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cima"]
+position = Vector2(172, 400.5)
+shape = SubResource("RectangleShape2D_3yr6w")
+
+[node name="Baixo" type="Area2D" parent="."]
+script = ExtResource("10_fjog6")
+
+[node name="Baixo" type="Sprite2D" parent="Baixo"]
+position = Vector2(251, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("7_70nqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Baixo"]
+position = Vector2(250.5, 400.25)
+shape = SubResource("RectangleShape2D_u4e3c")
+
+[node name="Direita" type="Area2D" parent="."]
+script = ExtResource("9_fb8ae")
+
+[node name="Direita" type="Sprite2D" parent="Direita"]
+position = Vector2(333, 400)
+scale = Vector2(2, 2)
+texture = ExtResource("8_foqls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direita"]
+position = Vector2(333.5, 400.5)
+shape = SubResource("RectangleShape2D_fgd15")
+
+[node name="chao" type="Area2D" parent="."]
+script = ExtResource("14_34oa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao"]
+position = Vector2(214.5, 488.25)
+shape = SubResource("RectangleShape2D_bht1y")
+
+[connection signal="body_entered" from="Esquerda" to="Esquerda" method="_on_body_entered"]
+[connection signal="body_exited" from="Esquerda" to="Esquerda" method="_on_body_exited"]
+[connection signal="body_entered" from="Cima" to="Cima" method="_on_body_entered"]
+[connection signal="body_exited" from="Cima" to="Cima" method="_on_body_exited"]
+[connection signal="body_entered" from="Baixo" to="Baixo" method="_on_body_entered"]
+[connection signal="body_exited" from="Baixo" to="Baixo" method="_on_body_exited"]
+[connection signal="body_entered" from="Direita" to="Direita" method="_on_body_entered"]
+[connection signal="body_exited" from="Direita" to="Direita" method="_on_body_exited"]
+[connection signal="body_entered" from="chao" to="chao" method="_on_body_entered"]

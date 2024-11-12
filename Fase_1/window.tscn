@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvcu75p0hht4f"]
+
+[ext_resource type="Texture2D" uid="uid://bx46ktv1vc8r4" path="res://Mundo/individual_sprites/part-Slice 4.png" id="1_atowr"]
+[ext_resource type="Script" path="res://Fase_1/window.gd" id="1_xvg2t"]
+
+[node name="Window" type="Window"]
+position = Vector2i(-900, 36)
+size = Vector2i(300, 100)
+script = ExtResource("1_xvg2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 60)
+scale = Vector2(4, 4)
+texture = ExtResource("1_atowr")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "   teste"
+horizontal_alignment = 1
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

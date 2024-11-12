@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk8a5c52ee4ac"]
+
+[ext_resource type="PackedScene" uid="uid://12gd6fai3650" path="res://1 - Menu/menu.tscn" id="1_tapo0"]
+[ext_resource type="Script" path="res://1 - Menu/Button.gd" id="2_xsyva"]
+[ext_resource type="Texture2D" uid="uid://cwceju8gmrw3x" path="res://1 - Menu/comandos.png" id="3_krjw8"]
+[ext_resource type="Texture2D" uid="uid://wgu0mnkh0n3k" path="res://1 - Menu/interação.png" id="4_1w8ls"]
+[ext_resource type="Texture2D" uid="uid://bj6bbon50lk6a" path="res://1 - Menu/cursor.png" id="5_nvdfp"]
+[ext_resource type="VideoStream" path="res://1 - Menu/gatos1.ogv" id="6_l8hoh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3g1wx"]
+font_size = 25
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[node name="Menu" instance=ExtResource("1_tapo0")]
+
+[node name="AnimationPlayer" parent="background" index="0"]
+autoplay = "loop"
+
+[node name="Comandos" type="Sprite2D" parent="." index="2"]
+position = Vector2(702, 504)
+texture = ExtResource("3_krjw8")
+
+[node name="Interação" type="Sprite2D" parent="." index="3"]
+position = Vector2(413, 524)
+texture = ExtResource("4_1w8ls")
+
+[node name="Label2" type="Label" parent="." index="4"]
+offset_left = 239.0
+offset_top = 368.0
+offset_right = 955.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Interação                movimentação"
+label_settings = SubResource("LabelSettings_3g1wx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cursor" type="Sprite2D" parent="." index="5"]
+position = Vector2(481, 522)
+scale = Vector2(0.026875, 0.026875)
+texture = ExtResource("5_nvdfp")
+
+[node name="Video" type="VideoStreamPlayer" parent="." index="6"]
+offset_left = -6.0
+offset_right = 1914.0
+offset_bottom = 1088.0
+stream = ExtResource("6_l8hoh")
+
+[node name="Button" parent="." index="7"]
+script = ExtResource("2_xsyva")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

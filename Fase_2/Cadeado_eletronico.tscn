@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnfu6qdfwisna"]
+
+[ext_resource type="Texture2D" uid="uid://dx5jxtuamcx1p" path="res://Objetos/MSG.png" id="1_c1b6k"]
+[ext_resource type="Script" path="res://1.gd" id="2_77i3e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8x5na"]
+font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnh61"]
+font_size = 35
+
+[node name="Cadeado_eletronico" type="Sprite2D"]
+texture = ExtResource("1_c1b6k")
+
+[node name="1" type="Button" parent="."]
+offset_left = -208.0
+offset_top = 26.0
+offset_right = -178.0
+offset_bottom = 53.0
+text = "1"
+script = ExtResource("2_77i3e")
+
+[node name="2" type="Button" parent="."]
+offset_left = -158.0
+offset_top = 25.0
+offset_right = -128.0
+offset_bottom = 52.0
+text = "2"
+
+[node name="3" type="Button" parent="."]
+offset_left = -112.0
+offset_top = 26.0
+offset_right = -82.0
+offset_bottom = 53.0
+text = "3"
+
+[node name="Enter" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 26.0
+offset_right = 178.0
+offset_bottom = 53.0
+text = "Enter"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -212.0
+offset_top = -52.0
+offset_right = -18.0
+offset_bottom = -15.0
+text = "Digite a senha:"
+label_settings = SubResource("LabelSettings_8x5na")
+
+[node name="senha" type="Label" parent="."]
+offset_left = 7.0
+offset_top = -58.0
+offset_right = 214.0
+offset_bottom = -9.0
+label_settings = SubResource("LabelSettings_dnh61")
+
+[node name="limpar" type="Button" parent="."]
+offset_left = -47.0
+offset_top = 26.0
+offset_right = 50.0
+offset_bottom = 58.0
+text = "Limpar"
+
+[node name="x" type="Button" parent="."]
+offset_left = 226.0
+offset_top = -67.0
+offset_right = 260.0
+offset_bottom = -36.0
+text = "X"
+
+[connection signal="pressed" from="1" to="1" method="_on_pressed"]

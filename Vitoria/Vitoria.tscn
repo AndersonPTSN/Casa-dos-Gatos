@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://8m2calqawf64"]
+
+[ext_resource type="Script" path="res://Vitoria/Vitoria.gd" id="1_wrjti"]
+[ext_resource type="Texture2D" uid="uid://bkptf4yd0xaod" path="res://Fase_1_Dengozo/dengozo.png" id="2_2uida"]
+[ext_resource type="Texture2D" uid="uid://cuxwdmb2jgt0j" path="res://Fase_2_Arteiro/Arteiro.png" id="3_e8mka"]
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_2_Arteiro/MSG.png" id="4_1wiha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvsiy"]
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_52yv7"]
+font_size = 49
+
+[node name="Vitoria" type="Node2D"]
+script = ExtResource("1_wrjti")
+
+[node name="Dengozo" type="Sprite2D" parent="."]
+position = Vector2(286.781, 196.5)
+scale = Vector2(1.17066, 1.17066)
+texture = ExtResource("2_2uida")
+
+[node name="Arteiro" type="Sprite2D" parent="."]
+position = Vector2(848, 196)
+scale = Vector2(1.16467, 1.16467)
+texture = ExtResource("3_e8mka")
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(587, 524)
+scale = Vector2(2.38391, 2.05405)
+texture = ExtResource("4_1wiha")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 266.0
+offset_top = 496.0
+offset_right = 863.0
+offset_bottom = 640.0
+text = "Dengozo e Arteiro foram encontrados graças a você, 
+a Dora gostou muito do seu trabalho e parabenizou você 
+por ter conseguido recuperar eles! "
+label_settings = SubResource("LabelSettings_nvsiy")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 423.0
+offset_top = 396.0
+offset_right = 725.0
+offset_bottom = 464.0
+text = "Good ending"
+label_settings = SubResource("LabelSettings_52yv7")

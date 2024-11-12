@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdiiqx7lvk1t6"]
+
+[ext_resource type="Texture2D" uid="uid://dx5jxtuamcx1p" path="res://Objetos/MSG.png" id="1_nlrom"]
+[ext_resource type="Script" path="res://Objetos/aviso.gd" id="2_a5ajd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o7evy"]
+font_size = 30
+
+[node name="aviso" type="Sprite2D"]
+position = Vector2(165.25, 50.5)
+scale = Vector2(0.547532, 0.52027)
+texture = ExtResource("1_nlrom")
+script = ExtResource("2_a5ajd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -273.0
+offset_top = -72.0
+offset_right = 273.0
+offset_bottom = 74.0
+text = "Aviso de uma mensagem"
+label_settings = SubResource("LabelSettings_o7evy")
+horizontal_alignment = 1
+vertical_alignment = 1

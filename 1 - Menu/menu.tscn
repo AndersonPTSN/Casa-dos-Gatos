@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://12gd6fai3650"]
+
+[ext_resource type="Texture2D" uid="uid://bfbyf0mevwnuh" path="res://1 - Menu/background.png" id="1_omrhx"]
+[ext_resource type="AudioStream" uid="uid://dog6kvyip3bb3" path="res://1 - Menu/menu.mp3" id="2_nouyi"]
+
+[sub_resource type="Animation" id="Animation_7pvxw"]
+length = 0.001
+step = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1096, 322)]
+}
+
+[sub_resource type="Animation" id="Animation_b1ulk"]
+resource_name = "loop"
+length = 50.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1096, 322), Vector2(57, 322)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0vjp"]
+_data = {
+"RESET": SubResource("Animation_7pvxw"),
+"loop": SubResource("Animation_b1ulk")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_82pe4"]
+line_spacing = 10.0
+font_size = 47
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_c3cru"]
+default_font_size = 40
+
+[node name="Menu" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1096, 322)
+scale = Vector2(2.50969, 2.50969)
+texture = ExtResource("1_omrhx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background"]
+libraries = {
+"": SubResource("AnimationLibrary_s0vjp")
+}
+autoplay = "RESET"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 123.0
+offset_right = 1152.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "Casa dos Gatos"
+label_settings = SubResource("LabelSettings_82pe4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 363.0
+offset_top = 268.0
+offset_right = 809.0
+offset_bottom = 360.0
+theme = SubResource("Theme_c3cru")
+text = "Jogar"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nouyi")
+volume_db = -10.332
+autoplay = true

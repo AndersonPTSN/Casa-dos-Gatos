@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://72rro60rwr23"]
+
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Escovar_Dengozo/escovar_dnegozo.gd" id="1_nxybq"]
+[ext_resource type="Texture2D" uid="uid://d153lrmlm42a" path="res://Fase_2_Arteiro/Escovar_Arteiro/Sem título.png" id="1_peb44"]
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_2_Arteiro/MSG.png" id="2_lsv0q"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Escovar_Dengozo/Pente.gd" id="5_q4vjp"]
+[ext_resource type="Texture2D" uid="uid://y1e80jf64oin" path="res://Fase_2_Arteiro/Escovar_Arteiro/escova.png" id="6_rdgbg"]
+[ext_resource type="Texture2D" uid="uid://c5llvj1p8x1up" path="res://Fase_2_Arteiro/Escovar_Arteiro/mais1.png" id="8_ml462"]
+[ext_resource type="Texture2D" uid="uid://cs0itle2j3xi7" path="res://Fase_2_Arteiro/Escovar_Arteiro/menos1.png" id="9_o56ik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhnju"]
+font_size = 22
+
+[sub_resource type="LabelSettings" id="LabelSettings_4clfs"]
+font_size = 37
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47cc7"]
+size = Vector2(36, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie5m5"]
+size = Vector2(33, 462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xna34"]
+size = Vector2(995.5, 20)
+
+[node name="Escovar_Dnegozo" type="Node2D"]
+script = ExtResource("1_nxybq")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(578, 329.25)
+scale = Vector2(5.94949, 5.67647)
+texture = ExtResource("1_peb44")
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(577, 557)
+scale = Vector2(2.29159, 1.29054)
+texture = ExtResource("2_lsv0q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 479.0
+offset_right = 899.0
+offset_bottom = 526.0
+text = "Aperte (Cima) e (Baixo) para controlar a escova!"
+label_settings = SubResource("LabelSettings_qhnju")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 253.0
+offset_top = 513.0
+offset_right = 891.0
+offset_bottom = 560.0
+text = "Sua pontuação tem de ser maior ou igual a 5"
+label_settings = SubResource("LabelSettings_qhnju")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 177.0
+offset_top = 555.0
+offset_right = 815.0
+offset_bottom = 606.0
+text = "Pontuação:  "
+label_settings = SubResource("LabelSettings_4clfs")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 485.0
+offset_top = 557.0
+offset_right = 1123.0
+offset_bottom = 608.0
+label_settings = SubResource("LabelSettings_4clfs")
+horizontal_alignment = 1
+
+[node name="Pente" type="CharacterBody2D" parent="."]
+position = Vector2(115, -1)
+script = ExtResource("5_q4vjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pente"]
+position = Vector2(69.25, 138.367)
+scale = Vector2(0.43617, 0.43617)
+texture = ExtResource("6_rdgbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pente"]
+position = Vector2(71, 139)
+shape = SubResource("RectangleShape2D_47cc7")
+
+[node name="Parede" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
+position = Vector2(6.5, 221)
+shape = SubResource("RectangleShape2D_ie5m5")
+
+[node name="Teto" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teto"]
+position = Vector2(543.5, 22)
+shape = SubResource("RectangleShape2D_xna34")
+
+[node name="Chão" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão"]
+position = Vector2(539.75, 441)
+shape = SubResource("RectangleShape2D_xna34")
+
+[node name="Mais1" type="Sprite2D" parent="."]
+position = Vector2(231, -45)
+scale = Vector2(0.14375, 0.14375)
+texture = ExtResource("8_ml462")
+
+[node name="Menos1" type="Sprite2D" parent="."]
+position = Vector2(77, -59)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("9_o56ik")
+
+[connection signal="body_entered" from="Parede" to="." method="_on_parede_body_entered"]

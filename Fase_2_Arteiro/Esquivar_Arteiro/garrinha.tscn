@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnvsb1n0qriyt"]
+
+[ext_resource type="Texture2D" uid="uid://bolv0ldofwqeq" path="res://Fase_1_Dengozo/Esquivar_Dengozo/garra.png" id="1_h6q8w"]
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Esquivar_Dengozo/garrinha.gd" id="1_pv3ux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6gvo"]
+size = Vector2(75, 96)
+
+[node name="Garrinha" type="CharacterBody2D"]
+script = ExtResource("1_pv3ux")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 4)
+shape = SubResource("RectangleShape2D_b6gvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h6q8w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

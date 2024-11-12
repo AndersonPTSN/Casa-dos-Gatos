@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ly4lqi0s47d"]
+
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_2_Arteiro/MSG.png" id="1_3oia3"]
+[ext_resource type="Script" path="res://Bad_Ending/Button.gd" id="2_okoch"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_32fn5"]
+font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qxw8"]
+font_size = 50
+
+[node name="Bad_end" type="Node2D"]
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(578.75, 341.5)
+scale = Vector2(2.20932, 4.92568)
+texture = ExtResource("1_3oia3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 263.0
+offset_top = 295.0
+offset_right = 901.0
+offset_bottom = 342.0
+text = "Você não conseguiu resgatar os gatos
+Infelizmente a Dona deles não confia mais em você"
+label_settings = SubResource("LabelSettings_32fn5")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 266.0
+offset_top = 125.0
+offset_right = 904.0
+offset_bottom = 190.0
+text = "Bad Ending"
+label_settings = SubResource("LabelSettings_8qxw8")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 491.0
+offset_right = 710.0
+offset_bottom = 574.0
+text = "Voltar ao Menu"
+script = ExtResource("2_okoch")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

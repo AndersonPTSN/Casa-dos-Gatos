@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1r41swgvp6s0"]
+
+[ext_resource type="Script" path="res://Fase_1_Dengozo/Esquivar_Dengozo/esquivar.gd" id="1_0frka"]
+[ext_resource type="Texture2D" uid="uid://d153lrmlm42a" path="res://Fase_2_Arteiro/Escovar_Arteiro/Sem título.png" id="1_4060w"]
+[ext_resource type="Texture2D" uid="uid://cyryruug0jyqw" path="res://Fase_2_Arteiro/MSG.png" id="2_tojw1"]
+[ext_resource type="PackedScene" uid="uid://cyrpkys0et5as" path="res://Fase_2_Arteiro/Esquivar_Arteiro/mao_jogador.tscn" id="3_p5abn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgt7m"]
+font_size = 26
+
+[node name="Esquivar" type="Node2D"]
+script = ExtResource("1_0frka")
+
+[node name="SemTítulo" type="Sprite2D" parent="."]
+position = Vector2(577.5, 318.75)
+scale = Vector2(5.98485, 5.58403)
+texture = ExtResource("1_4060w")
+
+[node name="Msg" type="Sprite2D" parent="."]
+position = Vector2(577, 557)
+scale = Vector2(2.29159, 1.29054)
+texture = ExtResource("2_tojw1")
+
+[node name="mao" parent="." instance=ExtResource("3_p5abn")]
+position = Vector2(567, 408)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 262.0
+offset_top = 486.0
+offset_right = 842.0
+offset_bottom = 554.0
+text = "Aperte (Esquerda) e (Direita) para se esquivar!"
+label_settings = SubResource("LabelSettings_pgt7m")
+
+[node name="vida" type="Label" parent="."]
+offset_left = 420.0
+offset_top = 544.0
+offset_right = 774.0
+offset_bottom = 587.0
+text = "Vidas:"
+label_settings = SubResource("LabelSettings_pgt7m")

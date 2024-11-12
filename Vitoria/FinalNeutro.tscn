@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://pcdxrq3r3tuc"]
+
+[ext_resource type="Script" path="res://Vitoria/FinalNeutro.gd" id="1_mbawn"]
+[ext_resource type="Texture2D" uid="uid://d153lrmlm42a" path="res://Fase_2_Arteiro/Escovar_Arteiro/Sem título.png" id="2_v2drq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ba3b6"]
+font_size = 73
+outline_size = 19
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5c1qi"]
+font_size = 25
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[node name="FinalNeutro" type="Node2D"]
+script = ExtResource("1_mbawn")
+
+[node name="SemTítulo" type="Sprite2D" parent="."]
+position = Vector2(577.5, 320.25)
+scale = Vector2(5.98485, 5.69328)
+texture = ExtResource("2_v2drq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 345.0
+offset_top = 123.0
+offset_right = 772.0
+offset_bottom = 222.0
+text = "Não desista!"
+label_settings = SubResource("LabelSettings_ba3b6")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 207.0
+offset_top = 357.0
+offset_right = 913.0
+offset_bottom = 510.0
+text = "Dengozo pode não ter gostado de você em primeiro momento
+mas você poderá sempre poder tentar reconquista-lo novamente
+Tenha perceverança!"
+label_settings = SubResource("LabelSettings_5c1qi")
+horizontal_alignment = 1
